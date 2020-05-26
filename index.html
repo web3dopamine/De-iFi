@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="author" content="colorlib.com">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up Form</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+
+    <style type="text/css">
+     .topnav {
+      overflow: hidden;
+    }
+
+    .topnav a {
+      float: right;
+      display: block;
+      color: #fff;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+
+    .topnav a:hover {
+      
+      color: white;
+    }
+
+    .topnav a.active {
+      
+      color: white;
+    }
+
+    .topnav .icon {
+      display: none;
+    }
+
+    @media screen and (max-width: 600px) {
+      .topnav a:not(:first-child) {display: none;}
+      .topnav a.icon {
+        float: right;
+        display: block;
+      }
+    }
+
+    @media screen and (max-width: 600px) {
+      .topnav.responsive {position: relative;}
+      .topnav.responsive .icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+      .topnav.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+      }
+    }   
+    a[role=menuitem] {
+        display: none!important;
+    }
+    </style>
+    
+</head>
+<body>
+    <div class="topnav" id="myTopnav">
+      <a href="#about">Blog</a>
+      <a href="#contact">Cryptocurrency</a>
+      <a href="#news">Islamic Finance</a>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+    <div class="main">
+        <div class="container">
+
+            <!-- <div id="typed-strings">
+              <p>Typed.js is a <strong>JavaScript</strong> library.</p>
+              <p>It <em>types</em> out sentences.</p>
+            </div> -->
+            <p style="font-size:30px; color:#fff; text-align:center" >Calculate<span id="typed"></span> in crypto</p>
+
+            <form method="POST" id="signup-form" class="signup-form" enctype="multipart/form-data">
+                <h3>
+                    Zakaat
+                </h3>
+                <fieldset>
+                    <h2>Calculate your Zakat</h2>
+                    <div class="form-group">
+                        <select class="form-control" style="float: left">
+                            <option>BTC</option>
+                            <option>ETH</option>        
+                        </select>
+                        <input type="text" name="amount" id="amount" placeholder="Enter amount"/>
+                        <button style="float: right" type="button" class="btn btn-primary">Submit</button>
+                    </div>
+                   
+                </fieldset>
+
+                <h3>
+                    Hajj
+                </h3>
+                <fieldset>
+                    <h2>Social profiles</h2>
+                    <div class="form-group">
+                        <input type="text" name="socials_twitter" id="socials_twitter" placeholder="Twitter"/>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="socials_facebook" id="socials_facebook" placeholder="Facebook"/>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="socials_google" id="socials_google" placeholder="Google Plus"/>
+                    </div>
+                </fieldset>
+
+                <h3>
+                    Qurbani
+                </h3>
+                <fieldset> 
+                    <h2>Personal Details</h2>
+                    <div class="form-group">
+                        <input type="text" name="your_name" id="your_name" placeholder="Your name"/>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="your_phone" id="your_phone" placeholder="Phone"/>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="your_addr" id="your_addr" placeholder="Address"/>
+                    </div>
+                </fieldset>
+                <h3>
+                    Fitra
+                </h3>
+                <fieldset> 
+                    <h2>Personal Details</h2>
+                    <div class="form-group">
+                        <input type="text" name="your_name" id="your_name" placeholder="Your name"/>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="your_phone" id="your_phone" placeholder="Phone"/>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="your_addr" id="your_addr" placeholder="Address"/>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+
+    </div>
+    <script>
+  var typed3 = new Typed('#typed', {
+    strings: ['<i><b> Zakat</b></i>', '<i><b> Hajj</b></i>', '<i><b> Qurbani</b></i>', '<i><b> Fitra</b></i>'],
+    typeSpeed: 100,
+    backSpeed: 100,
+    smartBackspace: true, // this is a default
+    loop: true
+  });
+
+  function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+
+
+
+</script>
+    <!-- JS -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="vendor/jquery-validation/dist/additional-methods.min.js"></script>
+    <script src="vendor/jquery-steps/jquery.steps.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
