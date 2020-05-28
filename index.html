@@ -12,11 +12,19 @@
 
     <!-- Main css -->
     <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Font Awesome -->    
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+
+
+
 
     <style type="text/css">
      .topnav {
       overflow: hidden;
+      background-color:#161f36; 
     }
 
     .topnav a {
@@ -67,25 +75,23 @@
     a[role=menuitem] {
         display: none!important;
     }
+    
     </style>
     
 </head>
 <body>
     <div class="topnav" id="myTopnav">
+
       <a href="#about">Blog</a>
       <a href="#contact">Cryptocurrency</a>
-      <a href="#news">Islamic Finance</a>
+      <a href="#news">DeFi</a>
       <a href="javascript:void(0);" class="icon" onclick="myFunction()">
         <i class="fa fa-bars"></i>
       </a>
+      <a href="#news" style="float: left">Digitalizing Islamic Finance</a>
     </div>
     <div class="main">
         <div class="container">
-
-            <!-- <div id="typed-strings">
-              <p>Typed.js is a <strong>JavaScript</strong> library.</p>
-              <p>It <em>types</em> out sentences.</p>
-            </div> -->
             <p style="font-size:30px; color:#fff; text-align:center" >Calculate<span id="typed"></span> in crypto</p>
 
             <form method="POST" id="signup-form" class="signup-form" enctype="multipart/form-data">
@@ -95,14 +101,16 @@
                 <fieldset>
                     <h2>Calculate your Zakat</h2>
                     <div class="form-group">
-                        <select class="form-control" style="float: left">
+                        <select class="form-control" style="float: left; margin-right:40px;">
                             <option>BTC</option>
                             <option>ETH</option>        
                         </select>
-                        <input type="text" name="amount" id="amount" placeholder="Enter amount"/>
-                        <button style="float: right" type="button" class="btn btn-primary">Submit</button>
+                        <button type="button" class="btnSb">Submit</button>
+                        <input type="text" name="amount" id="amount" 
+                        placeholder="Enter amount or address"/>
+                        
                     </div>
-                   
+                    <h1 class="output">0.001 BTC</h1>                   
                 </fieldset>
 
                 <h3>
@@ -153,25 +161,29 @@
                 </fieldset>
             </form>
         </div>
-
+        <div class="soc-icons">
+            <i class="fa fa-facebook-square fa-3x f1" aria-hidden="true"></i>
+            <i class="fa fa-twitter fa-3x f2" aria-hidden="true"></i>
+            <i class="fa fa-youtube fa-3x f3" aria-hidden="true"></i>
+          </div> 
     </div>
     <script>
-  var typed3 = new Typed('#typed', {
-    strings: ['<i><b> Zakat</b></i>', '<i><b> Hajj</b></i>', '<i><b> Qurbani</b></i>', '<i><b> Fitra</b></i>'],
-    typeSpeed: 100,
-    backSpeed: 100,
-    smartBackspace: true, // this is a default
-    loop: true
-  });
+      var typed3 = new Typed('#typed', {
+        strings: ['<i><b> Zakat</b></i>', '<i><b> Hajj</b></i>', '<i><b> Qurbani</b></i>', '<i><b> Fitra</b></i>'],
+        typeSpeed: 100,
+        backSpeed: 100,
+        smartBackspace: true, // this is a default
+        loop: true
+      });
 
-  function myFunction() {
-  var x = document.getElementById("myTopnav");
-  if (x.className === "topnav") {
-    x.className += " responsive";
-  } else {
-    x.className = "topnav";
-  }
-}
+      function myFunction() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+        x.className += " responsive";
+      } else {
+        x.className = "topnav";
+      }
+    }
 
 
 
