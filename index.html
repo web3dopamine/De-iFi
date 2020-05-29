@@ -7,8 +7,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Sign Up Form</title>
 
+    <!-- bootstrap source --> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
     <!-- Font Icon -->
     <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+
 
     <!-- Main css -->
     <link rel="stylesheet" href="css/style.css">
@@ -67,11 +74,23 @@
     a[role=menuitem] {
         display: none!important;
     }
+    .soc-icons{
+      
+    }
+     .f1{
+        padding: 20px;
+    }
+    .f2{
+      padding: 20px;
+    }
+    .f3{
+      padding: 20px;
+    }
     </style>
     
 </head>
 <body>
-  <p></p>
+
     <div class="topnav" id="myTopnav">
       <a href="#about">Blog</a>
       <a href="#contact">Cryptocurrency</a>
@@ -93,16 +112,10 @@
                 <h3>
                     Zakaat
                 </h3>
-                <fieldset>
+                <fieldset >
                     <h2>Calculate your Zakat</h2>
-                    <div class="form-group">
-                        <select class="form-control" style="float: left">
-                            <option>BTC</option>
-                            <option>ETH</option>        
-                        </select>
-                        <input type="text" name="amount" id="amount" placeholder="Enter amount"/>
-                        <button style="float: right" type="button" class="btn btn-primary">Submit</button>
-                    </div>
+
+
                    
                 </fieldset>
 
@@ -156,6 +169,13 @@
         </div>
 
     </div>
+      <div class="soc-icons">
+        <i class="fa fa-facebook-square fa-3x f1" aria-hidden="true"></i>
+        <i class="fa fa-twitter fa-3x f2" aria-hidden="true"></i>
+        <i class="fa fa-youtube fa-3x f3" aria-hidden="true"></i>
+      </div>
+
+
     <script>
   var typed3 = new Typed('#typed', {
     strings: ['<i><b> Zakat</b></i>', '<i><b> Hajj</b></i>', '<i><b> Qurbani</b></i>', '<i><b> Fitra</b></i>'],
@@ -174,7 +194,7 @@
   }
 }
 
-
+    
 
 </script>
     <!-- JS -->
