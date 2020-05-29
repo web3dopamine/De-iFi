@@ -74,18 +74,6 @@
     a[role=menuitem] {
         display: none!important;
     }
-    .soc-icons{
-      
-    }
-     .f1{
-        padding: 20px;
-    }
-    .f2{
-      padding: 20px;
-    }
-    .f3{
-      padding: 20px;
-    }
     </style>
     
 </head>
@@ -114,7 +102,17 @@
                 </h3>
                 <fieldset >
                     <h2>Calculate your Zakat</h2>
-
+                      <div class="form-group">
+                        <select class="form-control" style="float: left; margin-right:40px;">
+                            <option>BTC</option>
+                            <option>ETH</option>        
+                        </select>
+                        <button type="button" class="btnSb">Submit</button>
+                        <input type="text" name="amount" id="amount" 
+                        placeholder="Enter amount or address"/>
+                        
+                    </div>
+                    <h1 class="output">0.001 BTC</h1>    
 
                    
                 </fieldset>
