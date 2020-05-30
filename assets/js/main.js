@@ -20,3 +20,21 @@
     $("li").removeClass("disabled");    
     
 })(jQuery);
+
+
+var typed3 = new Typed('#typed', {
+        strings: ['<i><b> Zakat</b></i>', '<i><b> Hajj</b></i>', '<i><b> Qurbani</b></i>', '<i><b> Fitra</b></i>'],
+        typeSpeed: 100,
+        backSpeed: 100,
+        smartBackspace: true, // this is a default
+        loop: true
+      });
+
+      function myFunction() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+        x.className += " responsive";
+      } else {
+        x.className = "topnav";
+      }
+    }

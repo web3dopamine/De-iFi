@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="no-js" lang="">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,10 +8,10 @@
     <title>Sign Up Form</title>
 
     <!-- Font Icon -->
-    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" type="text/css" href="fonts/material-icon/css/material-design-iconic-font.min.css">
 
     <!-- Main css -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
     
     <!-- Font Awesome -->    
     <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -80,20 +80,19 @@
     
 </head>
 <body>
-  <p></p>
     <div class="topnav" id="myTopnav">
 
       <a href="#about">Blog</a>
-      <a href="#contact">Cryptocurrency</a>
       <a href="#news">DeFi</a>
+      <a href="#contact">About</a>
       <a href="javascript:void(0);" class="icon" onclick="myFunction()">
         <i class="fa fa-bars"></i>
       </a>
-      <a href="#news" style="float: left">Digitalizing Islamic Finance</a>
+      <a href="#news" class="" style="float: left;">Digitalizing Islamic Finance</a>
     </div>
     <div class="main">
         <div class="container">
-            <p style="font-size:30px; color:#fff; text-align:center" >Calculate<span id="typed"></span> in crypto</p>
+            <p style="font-size:30px;color:#fff;text-align:center;"> Calculate<span id="typed"></span> in crypto</p>
 
             <form method="POST" id="signup-form" class="signup-form" enctype="multipart/form-data">
                 <h3>
@@ -102,7 +101,7 @@
                 <fieldset>
                     <h2>Calculate your Zakat</h2>
                     <div class="form-group">
-                        <select class="form-control" style="float: left; margin-right:40px;">
+                        <select class="form-control dropdown">
                             <option>BTC</option>
                             <option>ETH</option>        
                         </select>
@@ -168,27 +167,6 @@
             <i class="fa fa-youtube fa-3x f3" aria-hidden="true"></i>
           </div> 
     </div>
-    <script>
-      var typed3 = new Typed('#typed', {
-        strings: ['<i><b> Zakat</b></i>', '<i><b> Hajj</b></i>', '<i><b> Qurbani</b></i>', '<i><b> Fitra</b></i>'],
-        typeSpeed: 100,
-        backSpeed: 100,
-        smartBackspace: true, // this is a default
-        loop: true
-      });
-
-      function myFunction() {
-      var x = document.getElementById("myTopnav");
-      if (x.className === "topnav") {
-        x.className += " responsive";
-      } else {
-        x.className = "topnav";
-      }
-    }
-
-
-
-</script>
     <!-- JS -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/jquery-validation/dist/jquery.validate.min.js"></script>

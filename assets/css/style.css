@@ -35,7 +35,14 @@
 .f3{
   padding: 20px;
 } 
+.subHead {
+  
+}
 
+.dropdown {
+  float: left; 
+  margin-right:40px;
+}
 /*MY CSS end*/
 
 /* @extend display-flex; */
