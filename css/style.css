@@ -1,3 +1,73 @@
+Skip to content
+Search or jump to…
+
+Pull requests
+Issues
+Marketplace
+Explore
+ 
+@farhank1221 
+Learn Git and GitHub without any code!
+Using the Hello World guide, you’ll start a branch, write comments, and open a pull request.
+
+
+dhaileytaha
+/
+ZakatinBitcoin
+1
+01
+ Code
+ Issues 0
+ Pull requests 2 Actions
+ Projects 0
+ Wiki
+ Security 0
+ Insights
+ZakatinBitcoin/css/style.css
+@dhaileytaha dhaileytaha UI changes
+e359914 yesterday
+Executable File  480 lines (444 sloc)  18.2 KB
+  
+/*MY CSS*/
+
+/*submit button css*/
+
+.btnSb {
+  float:  right;
+  color:white;
+  width: 120px;
+  height: 60px;
+  background-color:#222;
+  background-image:-webkit-linear-gradient(0deg, #a1c4fd 0%, #884d80 0%, #2b5876 0%, #4e4376 100%);
+  border: none;
+  border-radius: 5px;
+}
+
+.output {
+  text-align: center; 
+  font-size: 50px;
+}
+
+/*Social icons */
+.soc-icons{
+  color: white;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+ .f1{
+    padding: 20px;
+}
+.f2{
+  padding: 20px;
+}
+.f3{
+  padding: 20px;
+} 
+
+/*MY CSS end*/
+
 /* @extend display-flex; */
 display-flex, .steps ul, .title-number, .actions ul, .actions ul li a {
   display: flex;
@@ -126,7 +196,7 @@ a:focus, a:active {
   -o-transition: all 300ms ease 0s;
   -ms-transition: all 300ms ease 0s; }
 
-input, select, textarea {
+input, textarea {
   outline: none;
   appearance: unset !important;
   -moz-appearance: unset !important;
@@ -255,7 +325,7 @@ input, textarea, select, option {
     color: #999; }
 
 input {
-  width: 70%;
+  width: 63%;
   display: block; }
 
 fieldset {
@@ -438,3 +508,15 @@ fieldset.current {
     padding: 0 10px; } }
 
 /*# sourceMappingURL=style.css.map */
+© 2020 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Help
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
