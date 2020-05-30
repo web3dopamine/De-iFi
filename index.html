@@ -1,227 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta name="author" content="colorlib.com">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Sign Up Form</title>
-
-    <!-- bootstrap source --> 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
-    <!-- Font Icon -->
-    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-
-
-    <!-- Main css -->
-    <link rel="stylesheet" href="css/style.css">
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
-
-    <style type="text/css">
-     .topnav {
-      overflow: hidden;
-    }
-
-    .topnav a {
-      float: right;
-      display: block;
-      color: #fff;
-      text-align: center;
-      padding: 14px 16px;
-      text-decoration: none;
-      font-size: 17px;
-    }
-
-    .topnav a:hover {
-      
-      color: white;
-    }
-
-    .topnav a.active {
-      
-      color: white;
-    }
-
-    .topnav .icon {
-      display: none;
-    }
-
-    @media screen and (max-width: 600px) {
-      .topnav a:not(:first-child) {display: none;}
-      .topnav a.icon {
-        float: right;
-        display: block;
-      }
-    }
-
-    @media screen and (max-width: 600px) {
-      .topnav.responsive {position: relative;}
-      .topnav.responsive .icon {
-        position: absolute;
-        right: 0;
-        top: 0;
-      }
-      .topnav.responsive a {
-        float: none;
-        display: block;
-        text-align: left;
-      }
-    }   
-    a[role=menuitem] {
-        display: none!important;
-    }
-    .soc-icons{
-  color: white;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  text-align: center;
-}
- .f1{
-    padding: 20px;
-}
-.f2{
-  padding: 20px;
-}
-.f3{
-  padding: 20px;
-} 
-    </style>
-    
-</head>
-<body>
-
-    <div class="topnav" id="myTopnav">
-      <a href="#about">Blog</a>
-      <a href="#contact">Cryptocurrency</a>
-      <a href="#news">Islamic Finance</a>
-      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-        <i class="fa fa-bars"></i>
-      </a>
-    </div>
-    <div class="main">
-        <div class="container">
-
-            <!-- <div id="typed-strings">
-              <p>Typed.js is a <strong>JavaScript</strong> library.</p>
-              <p>It <em>types</em> out sentences.</p>
-            </div> -->
-            <p style="font-size:30px; color:#fff; text-align:center" >Calculate<span id="typed"></span> in crypto</p>
-
-            <form method="POST" id="signup-form" class="signup-form" enctype="multipart/form-data">
-                <h3>
-                    Zakaat
-                </h3>
-                <fieldset >
-                    <h2>Calculate your Zakat</h2>
-                      <div class="form-group">
-                        <select class="form-control" style="float: left; margin-right:40px;">
-                            <option>BTC</option>
-                            <option>ETH</option>        
-                        </select>
-                        <button type="button" class="btnSb">Submit</button>
-                        <input type="text" name="amount" id="amount" 
-                        placeholder="Enter amount or address"/>
-                        
-                    </div>
-                    <h1 class="output">0.001 BTC</h1>    
-
-                   
-                </fieldset>
-
-                <h3>
-                    Hajj
-                </h3>
-                <fieldset>
-                    <h2>Calculate your Zakat</h2>
-                      <div class="form-group">
-                        <select class="form-control" style="float: left; margin-right:40px;">
-                            <option>BTC</option>
-                            <option>ETH</option>        
-                        </select>
-                        <button type="button" class="btnSb">Submit</button>
-                        <input type="text" name="amount" id="amount" 
-                        placeholder="Enter amount or address"/>
-                        
-                    </div>
-                    <h1 class="output">0.001 BTC</h1> 
-                </fieldset>
-
-                <h3>
-                    Qurbani
-                </h3>
-                <fieldset> 
-                    <h2>Calculate your Zakat</h2>
-                      <div class="form-group">
-                        <select class="form-control" style="float: left; margin-right:40px;">
-                            <option>BTC</option>
-                            <option>ETH</option>        
-                        </select>
-                        <button type="button" class="btnSb">Submit</button>
-                        <input type="text" name="amount" id="amount" 
-                        placeholder="Enter amount or address"/>
-                        
-                    </div>
-                    <h1 class="output">0.001 BTC</h1> 
-                </fieldset>
-                <h3>
-                    Fitra
-                </h3>
-                <fieldset> 
-                    <h2>Calculate your Zakat</h2>
-                      <div class="form-group">
-                        <select class="form-control" style="float: left; margin-right:40px;">
-                            <option>BTC</option>
-                            <option>ETH</option>        
-                        </select>
-                        <button type="button" class="btnSb">Submit</button>
-                        <input type="text" name="amount" id="amount" 
-                        placeholder="Enter amount or address"/>
-                        
-                    </div>
-                    <h1 class="output">0.001 BTC</h1> 
-                </fieldset>
-            </form>
-        </div>
-
-    </div>
-      <div class="soc-icons">
-        <i class="fa fa-facebook-square fa-3x f1" aria-hidden="true"></i>
-        <i class="fa fa-twitter fa-3x f2" aria-hidden="true"></i>
-        <i class="fa fa-youtube fa-3x f3" aria-hidden="true"></i>
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="author" content="colorlib.com">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>Sign Up Form</title>
+      <!-- Font Icon -->
+      <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+      <!-- Main css -->
+      <link rel="stylesheet" href="css/style.css">
+      <!-- Font Awesome -->    
+      <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+      <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+      <style type="text/css">
+         .topnav {
+         overflow: hidden;
+         background-color:#161f36; 
+         }
+         .topnav a {
+         float: right;
+         display: block;
+         color: #fff;
+         text-align: center;
+         padding: 14px 16px;
+         text-decoration: none;
+         font-size: 17px;
+         }
+         .topnav a:hover {
+         color: white;
+         }
+         .topnav a.active {
+         color: white;
+         }
+         .topnav .icon {
+         display: none;
+         }
+         @media screen and (max-width: 600px) {
+         .topnav a:not(:first-child) {display: none;}
+         .topnav a.icon {
+         float: right;
+         display: block;
+         }
+         }
+         @media screen and (max-width: 600px) {
+         .topnav.responsive {position: relative;}
+         .topnav.responsive .icon {
+         position: absolute;
+         right: 0;
+         top: 0;
+         }
+         .topnav.responsive a {
+         float: none;
+         display: block;
+         text-align: left;
+         }
+         }   
+         a[role=menuitem] {
+         display: none!important;
+         }
+      </style>
+   </head>
+   <body>
+      <p></p>
+      <div class="topnav" id="myTopnav">
+         <a href="#about">Blog</a>
+         <a href="#contact">Cryptocurrency</a>
+         <a href="#news">DeFi</a>
+         <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+         <i class="fa fa-bars"></i>
+         </a>
+         <a href="#news" style="float: left">Digitalizing Islamic Finance</a>
       </div>
-
-
-    <script>
-  var typed3 = new Typed('#typed', {
-    strings: ['<i><b> Zakat</b></i>', '<i><b> Hajj</b></i>', '<i><b> Qurbani</b></i>', '<i><b> Fitra</b></i>'],
-    typeSpeed: 100,
-    backSpeed: 100,
-    smartBackspace: true, // this is a default
-    loop: true
-  });
-
-  function myFunction() {
-  var x = document.getElementById("myTopnav");
-  if (x.className === "topnav") {
-    x.className += " responsive";
-  } else {
-    x.className = "topnav";
-  }
-}
-
-    
-
-</script>
-    <!-- JS -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/jquery-validation/dist/jquery.validate.min.js"></script>
-    <script src="vendor/jquery-validation/dist/additional-methods.min.js"></script>
-    <script src="vendor/jquery-steps/jquery.steps.min.js"></script>
-    <script src="js/main.js"></script>
-</body>
+      <div class="main">
+         <div class="container">
+            <p style="font-size:30px; color:#fff; text-align:center" >Calculate<span id="typed"></span> in crypto</p>
+            <form method="POST" id="signup-form" class="signup-form" enctype="multipart/form-data">
+               <h3>
+                  Zakaat
+               </h3>
+               <fieldset>
+                  <h2>Calculate your Zakat</h2>
+                  <div class="form-group">
+                     <select class="form-control" style="float: left; margin-right:40px;">
+                        <option>BTC</option>
+                        <option>ETH</option>
+                     </select>
+                     <button type="button" class="btnSb">Submit</button>
+                     <input type="text" name="amount" id="amount" 
+                        placeholder="Enter amount or address"/>
+                  </div>
+                  <h1 class="output">0.001 BTC</h1>
+               </fieldset>
+               <h3>
+                  Hajj
+               </h3>
+               <fieldset>
+                  <h2>Calculate your Zakat</h2>
+                  <div class="form-group">
+                     <select class="form-control" style="float: left; margin-right:40px;">
+                        <option>BTC</option>
+                        <option>ETH</option>
+                     </select>
+                     <button type="button" class="btnSb">Submit</button>
+                     <input type="text" name="amount" id="amount" 
+                        placeholder="Enter amount or address"/>
+                  </div>
+                  <h1 class="output">0.001 BTC</h1>
+               </fieldset>
+               <h3>
+                  Qurbani
+               </h3>
+               <fieldset>
+                  <h2>Calculate your Zakat</h2>
+                  <div class="form-group">
+                     <select class="form-control" style="float: left; margin-right:40px;">
+                        <option>BTC</option>
+                        <option>ETH</option>
+                     </select>
+                     <button type="button" class="btnSb">Submit</button>
+                     <input type="text" name="amount" id="amount" 
+                        placeholder="Enter amount or address"/>
+                  </div>
+                  <h1 class="output">0.001 BTC</h1>
+               </fieldset>
+               <h3>
+                  Fitra
+               </h3>
+               <fieldset>
+                  <h2>Calculate your Zakat</h2>
+                  <div class="form-group">
+                     <select class="form-control" style="float: left; margin-right:40px;">
+                        <option>BTC</option>
+                        <option>ETH</option>
+                     </select>
+                     <button type="button" class="btnSb">Submit</button>
+                     <input type="text" name="amount" id="amount" 
+                        placeholder="Enter amount or address"/>
+                  </div>
+                  <h1 class="output">0.001 BTC</h1>
+               </fieldset>
+            </form>
+         </div>
+         <div class="soc-icons">
+            <i class="fa fa-facebook-square fa-3x f1" aria-hidden="true"></i>
+            <i class="fa fa-twitter fa-3x f2" aria-hidden="true"></i>
+            <i class="fa fa-youtube fa-3x f3" aria-hidden="true"></i>
+         </div>
+          
+      </div>
+      <script>
+         var typed3 = new Typed('#typed', {
+           strings: ['<i><b> Zakat</b></i>', '<i><b> Hajj</b></i>', '<i><b> Qurbani</b></i>', '<i><b> Fitra</b></i>'],
+           typeSpeed: 100,
+           backSpeed: 100,
+           smartBackspace: true, // this is a default
+           loop: true
+         });
+         
+         function myFunction() {
+         var x = document.getElementById("myTopnav");
+         if (x.className === "topnav") {
+           x.className += " responsive";
+         } else {
+           x.className = "topnav";
+         }
+         }
+         
+         
+         
+      </script>
+      <!-- JS -->
+      <script src="vendor/jquery/jquery.min.js"></script>
+      <script src="vendor/jquery-validation/dist/jquery.validate.min.js"></script>
+      <script src="vendor/jquery-validation/dist/additional-methods.min.js"></script>
+      <script src="vendor/jquery-steps/jquery.steps.min.js"></script>
+      <script src="js/main.js"></script>
+   </body>
 </html>
