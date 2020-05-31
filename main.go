@@ -8,6 +8,8 @@ import (
 	"os"
 	"net/http"
 	"html/template"
+	"strconv"
+	"math"
 )
 
 //Global variables
@@ -29,6 +31,7 @@ import (
 		
 
 		http.HandleFunc("/", index)
+		http.HandleFunc("/zakaat", zakaat)
 
 		http.HandleFunc("/css/", serveResource)
     	http.HandleFunc("/vendor/", serveResource)
@@ -42,9 +45,9 @@ import (
 	}
 
 	func serveResource(w http.ResponseWriter, r *http.Request) {
-		fmt.Println("Connected")
+		// fmt.Println("Connected")
 	    path := "assets"+r.URL.Path
-	    fmt.Println(path)
+	    // fmt.Println(path)
 	    var contentType string
 	    if strings.HasSuffix(path, ".css") {
 	        contentType = "text/css"
@@ -73,4 +76,62 @@ import (
 		// w.Header().Set("Content-Type", "text/html")
 		tpl.ExecuteTemplate(w, "index.html", nil)
          
+	}
+
+	func zakaat(w http.ResponseWriter, r *http.Request){
+		if r.Method != "POST" {
+			http.Redirect(w, r, "/", http.StatusSeeOther)
+		return
+		} 
+
+		var (
+			amt string
+			asset string
+		)
+
+		amt = r.FormValue("amt")
+		asset = r.FormValue("asset")
+		
+		fmt.Println("amount = "+amt)
+		fmt.Println("asset = "+asset)
+
+		fmt.Println(price(asset))
+
+		balance, err := strconv.ParseFloat(amt, 64)
+		asset_price := price(asset)
+
+		if err != nil {
+			log.Fatal(err)
+		}
+
+		final := balance * asset_price
+
+		
+
+		final = math.Round(final*10)/10
+		fmt.Println(final)
+		fmt.Fprint(w, final)
+
+
+
+		// Malaysian Ringgit
+		rm := final * 4.30
+
+		nisaab := 75 * 240.15
+
+		OnZakaat := rm - nisaab
+
+		zakaatinRinggit := OnZakaat * 0.025
+
+		// fmt.Fprint(w, zakaat)
+		fmt.Println("Ringgit")
+		fmt.Println(rm)
+		fmt.Println("nisaab")
+		fmt.Println(nisaab)
+		fmt.Println("on zakaat")
+		fmt.Println(OnZakaat)
+		fmt.Println("zakaat in Ringgit")
+		fmt.Println(zakaatinRinggit)
+		// Malaysian Ringgit
+		// zakaat := OnZakaat * 0.25
 	}

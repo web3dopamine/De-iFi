@@ -38,3 +38,24 @@ var typed3 = new Typed('#typed', {
         x.className = "topnav";
       }
     }
+
+
+
+$("#zk_btn").click(function(){
+    var amt = $("#amount").val();
+    var asset = $("#asset").val();
+    console.log(amt);
+    console.log(asset);
+    $.ajax({
+        type: 'POST',
+        url: '/zakaat',
+        data: {amt:amt, asset: asset},
+        
+        }).done(function(result) { //use this
+
+            console.log(result)
+            // status = result
+                    
+
+    })
+})    
