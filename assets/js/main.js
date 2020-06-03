@@ -1,4 +1,8 @@
+
 (function($) {
+    $("#zakaat_in_btc").hide();
+    $(".rest").hide();
+    $(".zkcss").hide();
 
     var form = $("#signup-form");
     form.steps({
@@ -53,9 +57,32 @@ $("#zk_btn").click(function(){
         
         }).done(function(result) { //use this
 
-            console.log(result)
-            // status = result
-                    
+            // var btc = Math.round(result * 100) / 100;
+            var obj = JSON.parse(result);
+            
+            var btc = Math.round(obj.zakaat_in_bitcoin* 100) / 100;
+            
+            var usd = Math.round(obj.zakaat_in_USD* 100) / 100;
+            var gold = Math.round(obj.zakaat_in_gold* 100) / 100;
+            var rm = Math.round(obj.zakaat_in_rm* 100) / 100;
+            console.log(btc);
+            if (btc < 0){
+                $("#welcome_msg").hide();
+                $(".zkcss").show();
+                $("#zakaat_in_btc").show();
+                $("#zakaat_in_btc").html(0.00+ " BTC");
+
+                $(".rest").show();
+                $(".rest").html("<span>"+0.00 +" in USD</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>"+0.00 +"gm in GOLD</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>"+0.00 +" in MYR</span>");
+            } else {
+                $("#welcome_msg").hide();
+                $(".zkcss").show();
+                $("#zakaat_in_btc").show();
+                $("#zakaat_in_btc").html(btc+ " BTC");
+
+                $(".rest").show();
+                $(".rest").html("<span>"+usd +" in USD</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>"+gold +"gm in GOLD</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>"+rm +" in MYR</span>");
+            }
 
     })
 })    

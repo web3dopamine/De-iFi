@@ -2,7 +2,21 @@
 html {
   scroll-behavior: smooth;
 }
-
+.zkcss {
+  font-size: 15px!important;
+  color:grey;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  text-align: center;
+}
+#zakaat_in_btc {
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+.rest {
+  margin-top: 0px;
+  font-size: 15px!important; 
+}
 #section02 a {
   padding-top: 60px;
 }

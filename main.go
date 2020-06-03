@@ -10,6 +10,7 @@ import (
 	"html/template"
 	"strconv"
 	"math"
+	"encoding/json"
 )
 
 //Global variables
@@ -109,29 +110,59 @@ import (
 		
 
 		final = math.Round(final*10)/10
-		fmt.Println(final)
-		fmt.Fprint(w, final)
 
+		//final balance in USD
+		fmt.Println("final balance in USD")
+		fmt.Println(final)
+		
+
+		// USD
+		usd := final //USD value of crypto
+
+		nisaab_in_USD := 75 * 56.35
+
+		OnZakaat_USD := usd - nisaab_in_USD
+
+		zakaat_in_USD := OnZakaat_USD * 0.025
+		fmt.Println("zakaat in USD")
+		fmt.Println(math.Round(zakaat_in_USD*1000)/1000)
+
+
+		//Bitcoin
+		zakaat_in_bitcoin := zakaat_in_USD/asset_price
+		fmt.Println("zakaat in Bitcoin")
+		fmt.Println(math.Round(zakaat_in_bitcoin*1000)/1000)
+		// fmt.Fprint(w, " ", zakaat_in_bitcoin)
+		//Gold
+		zakaat_in_gold := zakaat_in_USD/56.35
+		fmt.Println("zakaat in Gold")
+		fmt.Println(math.Round(zakaat_in_gold*1000)/1000)
+		// zakaat_in_gold = math.Round(zakaat_in_gold*1000)/1000
+		// fmt.Fprint(w, " ",zakaat_in_gold)
 
 
 		// Malaysian Ringgit
-		rm := final * 4.30
+		rm := final * 4.30 // 1 usd to rm value is 4.30
 
-		nisaab := 75 * 240.15
+		nisaab_rm := 75 * 240.15 // 75 gms * per 1 gram of gold in RM
 
-		OnZakaat := rm - nisaab
+		OnZakaat_rm := rm - nisaab_rm // The value on which zakaat comes
 
-		zakaatinRinggit := OnZakaat * 0.025
+		zakaatinRinggit := OnZakaat_rm * 0.025 // zakaat in RM
 
 		// fmt.Fprint(w, zakaat)
-		fmt.Println("Ringgit")
+		fmt.Println("total crypto value in RM")
 		fmt.Println(rm)
-		fmt.Println("nisaab")
-		fmt.Println(nisaab)
+		fmt.Println("nisaab in RM")
+		fmt.Println(nisaab_rm)
 		fmt.Println("on zakaat")
-		fmt.Println(OnZakaat)
-		fmt.Println("zakaat in Ringgit")
-		fmt.Println(zakaatinRinggit)
-		// Malaysian Ringgit
-		// zakaat := OnZakaat * 0.25
+		fmt.Println(OnZakaat_rm)
+		fmt.Println("zakaat in RM")
+		fmt.Println(math.Round(zakaatinRinggit*1000)/1000)
+
+
+		mapD := map[string]float64{"zakaat_in_USD": zakaat_in_USD, "zakaat_in_gold": zakaat_in_gold, "zakaat_in_bitcoin": zakaat_in_bitcoin, "zakaat_in_rm": zakaatinRinggit}
+    	mapB, _ := json.Marshal(mapD)
+    	fmt.Println(string(mapB))
+		fmt.Fprint(w, string(mapB))
 	}
