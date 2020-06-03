@@ -3,6 +3,7 @@
     $("#zakaat_in_btc").hide();
     $(".rest").hide();
     $(".zkcss").hide();
+    $("#zk_note").hide();
 
     var form = $("#signup-form");
     form.steps({
@@ -75,11 +76,13 @@ $("#zk_btn").click(function(){
                 $(".rest").show();
                 $(".rest").html("<span>"+0.00 +" in USD</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>"+0.00 +"gm in GOLD</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>"+0.00 +" in MYR</span>");
             } else {
-                $("#welcome_msg").hide();
+                // $("#welcome_msg").hide();
+                $(".content").css("height", "365px");
                 $(".zkcss").show();
                 $("#zakaat_in_btc").show();
                 $("#zakaat_in_btc").html(btc+ " BTC");
 
+                $("#zk_note").show();
                 $(".rest").show();
                 $(".rest").html("<span>"+usd +" in USD</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>"+gold +"gm in GOLD</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>"+rm +" in MYR</span>");
             }

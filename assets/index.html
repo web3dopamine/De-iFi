@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="author" content="colorlib.com">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Sign Up Form</title>
+    <title>De-iFi</title>
 
     <!-- Font Icon -->
     <link rel="stylesheet" type="text/css" href="fonts/material-icon/css/material-design-iconic-font.min.css">
@@ -21,12 +21,13 @@
     <div class="topnav" id="myTopnav">
 
       <a href="#about">Blog</a>
-      <a href="#news">DeFi</a>
-      <a href="#contact">About</a>
+      <a href="#news">De-iFi</a>
+      <a href="#news">FAQs</a>
+      <a href="#section03"><span>About</span></a>
       <a href="javascript:void(0);" class="icon" onclick="myFunction()">
         <i class="fa fa-bars"></i>
       </a>
-      <a href="#news" class="" style="float: left;">Decentralized Islamic Finance</a>
+      <a href="#news" class="" style="float: left;"><img src="images/deifi_2.png" width="90"></a>
     </div>
     <div class="main">
         <div class="container" style="margin-bottom: 30px">
@@ -46,28 +47,29 @@
                             </select>
                             <button type="button" class="btnSb" id="zk_btn">Submit</button>
                             <input type="text" name="amount" id="amount" 
-                            placeholder="Enter amount or address"/>
+                            placeholder="Enter amount"/>
                         </div>
                     <!-- </form> -->
-                    <p class='zkcss'>Zakaat you pay :</p>
-                    <h1 class="output" id="welcome_msg">Welcome to De-iFi!</h1>
+                    <p class='zkcss'>Your total Zakaat will be:</p>
+                    <!-- <h1 class="output" id="welcome_msg">Welcome to De-iFi!</h1> -->
                     <h1 class="output" id="zakaat_in_btc"></h1>
-                    <p class="output rest"></p>                   
+                    <p class="output rest"></p>        
+                    <p id="zk_note"><i>Note: Zakaat is calculated on 2.5% of savings on excess of 75 grams of gold</i></p>           
                 </fieldset>
 
                 <h3>
                     Hajj
                 </h3>
                 <fieldset>
-                    <h2>Social profiles</h2>
-                    <div class="form-group">
-                        <input type="text" name="socials_twitter" id="socials_twitter" placeholder="Twitter"/>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" name="socials_facebook" id="socials_facebook" placeholder="Facebook"/>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" name="socials_google" id="socials_google" placeholder="Google Plus"/>
+                    <h2>Calculate your Hajj</h2>
+                     <div class="form-group">
+                        <select class="form-control dropdown" id="hajj_asset">
+                            <option value="BTC">BTC</option>
+                            <option value="ETH">ETH</option>        
+                        </select>
+                        <button type="button" class="btnSb" id="hajj_btn">Submit</button>
+                        <input type="text" name="amount" id="hajj_amount" 
+                        placeholder="Enter amount"/>
                     </div>
                 </fieldset>
 
@@ -75,30 +77,30 @@
                     Qurbani
                 </h3>
                 <fieldset> 
-                    <h2>Personal Details</h2>
-                    <div class="form-group">
-                        <input type="text" name="your_name" id="your_name" placeholder="Your name"/>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" name="your_phone" id="your_phone" placeholder="Phone"/>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" name="your_addr" id="your_addr" placeholder="Address"/>
+                    <h2>Calculate your Qurbani</h2>
+                     <div class="form-group">
+                        <select class="form-control dropdown" id="qur_asset">
+                            <option value="BTC">BTC</option>
+                            <option value="ETH">ETH</option>        
+                        </select>
+                        <button type="button" class="btnSb" id="qur_btn">Submit</button>
+                        <input type="text" name="amount" id="amount" 
+                        placeholder="Enter Amount"/>
                     </div>
                 </fieldset>
                 <h3>
                     Fitra
                 </h3>
                 <fieldset> 
-                    <h2>Personal Details</h2>
-                    <div class="form-group">
-                        <input type="text" name="your_name" id="your_name" placeholder="Your name"/>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" name="your_phone" id="your_phone" placeholder="Phone"/>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" name="your_addr" id="your_addr" placeholder="Address"/>
+                    <h2>Calculate your Fitra</h2>
+                     <div class="form-group">
+                        <select class="form-control dropdown" id="fitra_asset">
+                            <option value="BTC">BTC</option>
+                            <option value="ETH">ETH</option>        
+                        </select>
+                        <button type="button" class="btnSb" id="fitra_btn">Submit</button>
+                        <input type="text" name="amount" id="fitra_amount" 
+                        placeholder="Enter Amount"/>
                     </div>
                 </fieldset>
             </form>
@@ -118,7 +120,7 @@
             <text x="20%" y="20%" text-anchor="middle" dy="1em" style="font-family: Poppins; ">
             
             <!-- <tspan x="20%" dy="2em" style="; font-size: 8px">a step towards </tspan> -->
-            <tspan x="22%" dy="2em" style="font-weight: bold; font-size: 10px">Decentralised Islamic Finance</tspan>
+            <tspan x="22%" dy="2em" style="font-weight: bold; font-size: 10px">De-iFi: Decentralized Islamic Finance</tspan>
                 
             <tspan x="23.5%" dy="3em" style="font-size: 8px">A step towards using DeFi platforms as per </tspan>
             <tspan x="19.4%" dy="1.2em" style="font-size: 8px">the principles of Islamic Finance</tspan>

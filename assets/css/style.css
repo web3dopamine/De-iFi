@@ -9,6 +9,10 @@ html {
   margin-top: 0px;
   text-align: center;
 }
+#zk_note {
+  font-size: 10px;
+  text-align: center;
+}
 #zakaat_in_btc {
   margin-bottom: 0px;
   margin-top: 0px;
@@ -544,7 +548,7 @@ fieldset.current {
   padding-right: 37px; }
 
 .content {
-  height: 365px;
+  height: 250px;
   /*width: 330px;*/
   margin: 0 auto;
   background: #fff;
