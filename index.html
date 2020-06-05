@@ -1,180 +1,182 @@
-<!DOCTYPE html>
-<html lang="en">
-   <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="author" content="colorlib.com">
-      <meta http-equiv="X-UA-Compatible" content="ie=edge">
-      <title>Sign Up Form</title>
-      <!-- Font Icon -->
-      <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
-      <!-- Main css -->
-      <link rel="stylesheet" href="css/style.css">
-      <!-- Font Awesome -->    
-      <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-      <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
-      <style type="text/css">
-         .topnav {
-         overflow: hidden;
-         background-color:#161f36; 
-         }
-         .topnav a {
-         float: right;
-         display: block;
-         color: #fff;
-         text-align: center;
-         padding: 14px 16px;
-         text-decoration: none;
-         font-size: 17px;
-         }
-         .topnav a:hover {
-         color: white;
-         }
-         .topnav a.active {
-         color: white;
-         }
-         .topnav .icon {
-         display: none;
-         }
-         @media screen and (max-width: 600px) {
-         .topnav a:not(:first-child) {display: none;}
-         .topnav a.icon {
-         float: right;
-         display: block;
-         }
-         }
-         @media screen and (max-width: 600px) {
-         .topnav.responsive {position: relative;}
-         .topnav.responsive .icon {
-         position: absolute;
-         right: 0;
-         top: 0;
-         }
-         .topnav.responsive a {
-         float: none;
-         display: block;
-         text-align: left;
-         }
-         }   
-         a[role=menuitem] {
-         display: none!important;
-         }
-      </style>
-   </head>
-   <body>
-      <p></p>
-      <div class="topnav" id="myTopnav">
-         <a href="#about">Blog</a>
-         <a href="#contact">Cryptocurrency</a>
-         <a href="#news">DeFi</a>
-         <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-         <i class="fa fa-bars"></i>
-         </a>
-         <a href="#news" style="float: left">Digitalizing Islamic Finance</a>
-      </div>
-      <div class="main">
-         <div class="container">
-            <p style="font-size:30px; color:#fff; text-align:center" >Calculate<span id="typed"></span> in crypto</p>
+  <!DOCTYPE html>
+<html class="no-js" lang="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="colorlib.com">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up Form</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" type="text/css" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <!-- Main css -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    
+    <!-- Font Awesome -->    
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Bootstrap -->
+
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>  
+    <script>
+      $("button").click(function() {
+    var $btn = $(this);
+    $btn.button('loading');
+    // simulating a timeout
+    setTimeout(function () {
+        $btn.button('reset');
+    }, 1000);
+});
+    </script>
+</head>
+<body class="parallax">
+    <div class="topnav" id="myTopnav">
+           
+      <a href="#about">Blog</a>
+      <a href="#news">DeFi</a>
+      <a href="#contact">About</a>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+      <a href="https://fontmeme.com/calligraphy-fonts/"><img src="https://fontmeme.com/permalink/200604/7d7fed38de22db14b6d2a4952e6bf78a.png" alt="calligraphy-fonts" border="0" style="width: 50%;float: left;"></a>   
+</div>
+    <div class="main">
+        <div class="container" style="margin-bottom: 30px">
+            <p style="font-size:30px;color:#fff;text-align:center;"> Calculate<span id="typed"></span> in crypto</p>
+
             <form method="POST" id="signup-form" class="signup-form" enctype="multipart/form-data">
-               <h3>
-                  Zakaat
-               </h3>
-               <fieldset>
-                  <h2>Calculate your Zakat</h2>
-                  <div class="form-group">
-                     <select class="form-control" style="float: left; margin-right:40px;">
-                        <option>BTC</option>
-                        <option>ETH</option>
-                     </select>
-                     <button type="button" class="btnSb">Submit</button>
-                     <input type="text" name="amount" id="amount" 
-                        placeholder="Enter amount or address"/>
-                  </div>
-                  <h1 class="output">0.001 BTC</h1>
-               </fieldset>
-               <h3>
-                  Hajj
-               </h3>
-               <fieldset>
-                  <h2>Calculate your Zakat</h2>
-                  <div class="form-group">
-                     <select class="form-control" style="float: left; margin-right:40px;">
-                        <option>BTC</option>
-                        <option>ETH</option>
-                     </select>
-                     <button type="button" class="btnSb">Submit</button>
-                     <input type="text" name="amount" id="amount" 
-                        placeholder="Enter amount or address"/>
-                  </div>
-                  <h1 class="output">0.001 BTC</h1>
-               </fieldset>
-               <h3>
-                  Qurbani
-               </h3>
-               <fieldset>
-                  <h2>Calculate your Zakat</h2>
-                  <div class="form-group">
-                     <select class="form-control" style="float: left; margin-right:40px;">
-                        <option>BTC</option>
-                        <option>ETH</option>
-                     </select>
-                     <button type="button" class="btnSb">Submit</button>
-                     <input type="text" name="amount" id="amount" 
-                        placeholder="Enter amount or address"/>
-                  </div>
-                  <h1 class="output">0.001 BTC</h1>
-               </fieldset>
-               <h3>
-                  Fitra
-               </h3>
-               <fieldset>
-                  <h2>Calculate your Zakat</h2>
-                  <div class="form-group">
-                     <select class="form-control" style="float: left; margin-right:40px;">
-                        <option>BTC</option>
-                        <option>ETH</option>
-                     </select>
-                     <button type="button" class="btnSb">Submit</button>
-                     <input type="text" name="amount" id="amount" 
-                        placeholder="Enter amount or address"/>
-                  </div>
-                  <h1 class="output">0.001 BTC</h1>
-               </fieldset>
+                <h3>
+                    Zakaat
+                </h3>
+                <fieldset>
+                    <h2>Calculate your Zakat</h2>
+                    <!-- <form method="POST"> -->
+                        <div class="form-group">
+                            <select class="form-control dropdown" id="asset">
+                                <option value="BTC">BTC</option>
+                                <option value="ETH">ETH</option>        
+                            </select>
+                            <button  type="button"  class="btnSb" id="zk_btn">Submit</button>
+                            <input type="text" name="amount" id="amount" 
+                            placeholder="Enter amount or address"/>
+                        </div>
+                    <!-- </form> -->
+                    <p class='zkcss'>Zakaat you pay :</p>
+                    <h1 class="output" id="welcome_msg">Welcome to De-iFi!</h1>
+                    <h1 class="output" id="zakaat_in_btc"></h1>
+                    <p class="output rest"></p>                   
+                </fieldset>
+
+                <h3>
+                    Hajj
+                </h3>
+                <fieldset>
+                    <h2>Social profiles</h2>
+                    <div class="form-group">
+                        <input type="text" name="socials_twitter" id="socials_twitter" placeholder="Twitter"/>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="socials_facebook" id="socials_facebook" placeholder="Facebook"/>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="socials_google" id="socials_google" placeholder="Google Plus"/>
+                    </div>
+                </fieldset>
+
+                <h3>
+                    Qurbani
+                </h3>
+                <fieldset> 
+                    <h2>Personal Details</h2>
+                    <div class="form-group">
+                        <input type="text" name="your_name" id="your_name" placeholder="Your name"/>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="your_phone" id="your_phone" placeholder="Phone"/>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="your_addr" id="your_addr" placeholder="Address"/>
+                    </div>
+                </fieldset>
+                <h3>
+                    Fitra
+                </h3>
+                <fieldset> 
+                    <h2>Personal Details</h2>
+                    <div class="form-group">
+                        <input type="text" name="your_name" id="your_name" placeholder="Your name"/>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="your_phone" id="your_phone" placeholder="Phone"/>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="your_addr" id="your_addr" placeholder="Address"/>
+                    </div>
+                </fieldset>
             </form>
-         </div>
-         <div class="soc-icons">
+            <section id="section02" class="demo">
+              <!-- <h1>Scroll Down Button #2</h1> -->
+              <a href="#section03"><span></span></a>
+            </section>
+
+        </div>
+    </div>
+
+    <div class="main" id="section03">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" viewBox="0 0 500 350">
+          <g id="UrTavla">
+            <circle style="fill:white;stroke-miterlimit:10;" cx="90" cy="165" r="165">
+            </circle>
+            <text x="20%" y="20%" text-anchor="middle" dy="1em" style="font-family: Poppins; ">
+            
+            <!-- <tspan x="20%" dy="2em" style="; font-size: 8px">a step towards </tspan> -->
+            <tspan x="22%" dy="2em" style="font-weight: bold; font-size: 10px">Decentralised Islamic Finance</tspan>
+                
+            <tspan x="23.5%" dy="3em" style="font-size: 8px">A step towards using DeFi platforms as per </tspan>
+            <tspan x="19.4%" dy="1.2em" style="font-size: 8px">the principles of Islamic Finance</tspan>
+            
+            <tspan x="16.5%" dy="3em" style="font-size: 8px">[1] this is another list item</tspan>
+            <tspan x="16.7%" dy="1.2em" style="font-size: 8px">[2] this is another list item</tspan>
+            <tspan x="16.7%" dy="1.2em" style="font-size: 8px">[3] this is another list item</tspan>
+            <tspan x="16.7%" dy="1.2em" style="font-size: 8px">[4] this is another list item</tspan>
+            <tspan x="16.7%" dy="1.2em" style="font-size: 8px">[5] this is another list item</tspan>
+            <tspan x="16.7%" dy="1.2em" style="font-size: 8px">[6] this is another list item</tspan>
+            <tspan x="16.7%" dy="1.2em" style="font-size: 8px">[7] this is another list item</tspan>
+            <tspan x="16.7%" dy="1.2em" style="font-size: 8px">[8] this is another list item</tspan>
+            </text>
+            <image href="images/section2img.png" x="52%" y="10%" height="200" width="200"/>
+          </g>
+        </svg>
+         
+     </div>
+     <div class="soc-icons">
             <i class="fa fa-facebook-square fa-3x f1" aria-hidden="true"></i>
             <i class="fa fa-twitter fa-3x f2" aria-hidden="true"></i>
             <i class="fa fa-youtube fa-3x f3" aria-hidden="true"></i>
-         </div>
-          
-      </div>
-      <script>
-         var typed3 = new Typed('#typed', {
-           strings: ['<i><b> Zakat</b></i>', '<i><b> Hajj</b></i>', '<i><b> Qurbani</b></i>', '<i><b> Fitra</b></i>'],
-           typeSpeed: 100,
-           backSpeed: 100,
-           smartBackspace: true, // this is a default
-           loop: true
-         });
-         
-         function myFunction() {
-         var x = document.getElementById("myTopnav");
-         if (x.className === "topnav") {
-           x.className += " responsive";
-         } else {
-           x.className = "topnav";
-         }
-         }
-         
-         
-         
-      </script>
-      <!-- JS -->
-      <script src="vendor/jquery/jquery.min.js"></script>
-      <script src="vendor/jquery-validation/dist/jquery.validate.min.js"></script>
-      <script src="vendor/jquery-validation/dist/additional-methods.min.js"></script>
-      <script src="vendor/jquery-steps/jquery.steps.min.js"></script>
-      <script src="js/main.js"></script>
-   </body>
+          </div>   
+
+
+    <!-- JS -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="vendor/jquery-validation/dist/additional-methods.min.js"></script>
+    <script src="vendor/jquery-steps/jquery.steps.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
 </html>
+
+
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="https://fontmeme.com/calligraphy-fonts/"><img src="https://fontmeme.com/permalink/200604/7d7fed38de22db14b6d2a4952e6bf78a.png" border="0" style="width: 40%"></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="#">Page 1</a></li>
+      <li><a href="#">Page 2</a></li>
+      <li><a href="#">Page 3</a></li>
+    </ul>
+  </div>
+</nav>
