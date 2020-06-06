@@ -9,6 +9,10 @@
     <!-- Font Icon -->
     <link rel="stylesheet" type="text/css" href="fonts/material-icon/css/material-design-iconic-font.min.css">
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  
+    
     <!-- Main css -->
     <link rel="stylesheet" type="text/css" href="css/style.css">
     
@@ -40,14 +44,45 @@
                 <fieldset>
                     <h2>Calculate your Zakat</h2>
                     <!-- <form method="POST"> -->
-                        <div class="form-group">
-                            <select class="form-control dropdown" id="asset">
-                                <option value="BTC">BTC</option>
+                        <div class="form-inline col-lg-12 mb40">
+                            <div class="btn-group col-lg-3">
+                                <button type="button" class="btn btn-default dropdown-toggle h60" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span id="assetText">
+                                  <img src="images/btc.png" width="20">
+                                  BTC</span><input type='hidden' id='asset' value='BTC'>
+                                  <span class="glyphicon glyphicon-chevron-down"></span>
+                                </button>
+                                
+                                <ul class="dropdown-menu">
+                                  <!-- <li class="dropdown-header">Member name (you)</li> -->
+                                  <li id="btc">
+                                    <a href="#" title="Select this card"><img src="images/btc.png" width="20">BTC</a>
+                                  </li>
+                                  <li id="eth">
+                                    <a href="#" title="Select this card"><img src="images/eth.png" width="20">ETH</a>
+                                  </li>
+                                  <li id="usdt">
+                                    <a href="#" id="eth" title="Select this card"><img src="images/usdt.png" width="20">USDT</a>
+                                  </li>
+                                 <!--  <li class="dropdown-header">Member name</li> -->
+                                  <li id="mkr">
+                                    <a href="#" title="Select this card"><img src="images/mkr.png" width="20">MKR</a>
+                                  </li>
+                                  <li id="bch">
+                                    <a href="#" title="Select this card"><img src="images/bch.png" width="20">BCH</a>
+                                  </li>
+                                  <li id="xrp">
+                                    <a href="#" title="Select this card"><img src="images/xrp.png" width="20">XRP</a>
+                                  </li>
+                                </ul>
+                              </div>
+                            <!-- <select class="form-control dropdown" id="asset">
+                                <option value="BTC" style="background-image:url(images/btc.png);">BTC</option>
                                 <option value="ETH">ETH</option>        
-                            </select>
-                            <button type="button" class="btnSb" id="zk_btn">Submit</button>
+                            </select> -->
                             <input type="text" name="amount" id="amount" 
-                            placeholder="Enter amount"/>
+                            placeholder="Enter amount" class="col-lg-6" />
+                            <button type="button" class="btnSb col-lg-2" id="zk_btn" data-loading-text="<i class='fa fa-spinner fa-spin fa-2x'></i>">Submit</button>
+                            
                         </div>
                     <!-- </form> -->
                     <p class='zkcss'>Your total Zakaat will be:</p>
@@ -62,7 +97,7 @@
                 </h3>
                 <fieldset>
                     <h2>Calculate your Hajj</h2>
-                     <div class="form-group">
+                     <div class="form-inline">
                         <select class="form-control dropdown" id="hajj_asset">
                             <option value="BTC">BTC</option>
                             <option value="ETH">ETH</option>        
@@ -71,6 +106,8 @@
                         <input type="text" name="amount" id="hajj_amount" 
                         placeholder="Enter amount"/>
                     </div>
+                    <p class="output" id="hajj_result"></p>
+                    <p id="hajj_note"></p>
                 </fieldset>
 
                 <h3>
@@ -78,7 +115,7 @@
                 </h3>
                 <fieldset> 
                     <h2>Calculate your Qurbani</h2>
-                     <div class="form-group">
+                     <div class="form-inline">
                         <select class="form-control dropdown" id="qur_asset">
                             <option value="BTC">BTC</option>
                             <option value="ETH">ETH</option>        
@@ -93,7 +130,7 @@
                 </h3>
                 <fieldset> 
                     <h2>Calculate your Fitra</h2>
-                     <div class="form-group">
+                     <div class="form-inline">
                         <select class="form-control dropdown" id="fitra_asset">
                             <option value="BTC">BTC</option>
                             <option value="ETH">ETH</option>        
@@ -153,9 +190,14 @@
 
     <!-- JS -->
     <script src="vendor/jquery/jquery.min.js"></script>
+    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
     <script src="vendor/jquery-validation/dist/jquery.validate.min.js"></script>
     <script src="vendor/jquery-validation/dist/additional-methods.min.js"></script>
     <script src="vendor/jquery-steps/jquery.steps.min.js"></script>
     <script src="js/main.js"></script>
+
+
 </body>
 </html>

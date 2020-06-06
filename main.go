@@ -33,6 +33,7 @@ import (
 
 		http.HandleFunc("/", index)
 		http.HandleFunc("/zakaat", zakaat)
+		http.HandleFunc("/hajj", hajj)
 
 		http.HandleFunc("/css/", serveResource)
     	http.HandleFunc("/vendor/", serveResource)
@@ -78,6 +79,55 @@ import (
 		tpl.ExecuteTemplate(w, "index.html", nil)
          
 	}
+
+	func hajj(w http.ResponseWriter, r *http.Request){
+		if r.Method != "POST" {
+			http.Redirect(w, r, "/", http.StatusSeeOther)
+		return
+		} 
+
+		var (
+			amt string
+			asset string
+		)
+
+		amt = r.FormValue("amt")
+		asset = r.FormValue("asset")
+		
+		fmt.Println("amount = "+amt)
+		fmt.Println("asset = "+asset)
+
+		fmt.Println(price(asset))
+
+		balance, err := strconv.ParseFloat(amt, 64)
+		asset_price := price(asset)
+
+		if err != nil {
+			log.Fatal(err)
+		}
+
+		final := balance * asset_price
+
+		final = math.Round(final*10)/10
+
+		//final balance in USD
+		fmt.Println("final balance in USD")
+		fmt.Println(final)
+		
+		// USD
+		usd := final //USD value of crypto
+
+		var nisaab_in_USD float64 = 14000
+
+		hajj_in_USD := usd - nisaab_in_USD
+
+
+		mapD := map[string]float64{"hajj_in_USD": hajj_in_USD}
+    	mapB, _ := json.Marshal(mapD)
+    	fmt.Println(string(mapB))
+		fmt.Fprint(w, string(mapB))
+	}
+
 
 	func zakaat(w http.ResponseWriter, r *http.Request){
 		if r.Method != "POST" {
@@ -161,7 +211,20 @@ import (
 		fmt.Println(math.Round(zakaatinRinggit*1000)/1000)
 
 
-		mapD := map[string]float64{"zakaat_in_USD": zakaat_in_USD, "zakaat_in_gold": zakaat_in_gold, "zakaat_in_bitcoin": zakaat_in_bitcoin, "zakaat_in_rm": zakaatinRinggit}
+		type detials struct {
+			Asset string `json:"asset"`
+			Zakaat_in_USD float64 `json:"zakaat_in_USD"`
+			Zakaat_in_gold float64 `json:"zakaat_in_gold"`
+			Zakaat_in_bitcoin float64 `json:"zakaat_in_bitcoin"`
+			Zakaat_in_rm float64 `json:"zakaat_in_rm"`
+		}
+		mapD := &detials {
+			Asset:asset, 
+			Zakaat_in_USD: zakaat_in_USD, 
+			Zakaat_in_gold: zakaat_in_gold, 
+			Zakaat_in_bitcoin: zakaat_in_bitcoin, 
+			Zakaat_in_rm: zakaatinRinggit,
+		}
     	mapB, _ := json.Marshal(mapD)
     	fmt.Println(string(mapB))
 		fmt.Fprint(w, string(mapB))
