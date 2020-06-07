@@ -44,32 +44,32 @@ var typed3 = new Typed('#typed', {
       }
     }
 $("#btc").click(function(){
-    $("#assetText").html("<img src='images/btc.png' width='20'>BTC<input type='hidden' id='asset' value='BTC'>");  
-    console.log($("#asset").val());
+    $(".assetText").html("<img src='images/btc.png' width='20'>BTC<input type='hidden' class='asset' value='BTC'>");  
+    console.log($(".asset").val());
 })
 $("#eth").click(function(){
-    $("#assetText").html("<img src='images/eth.png' width='20'>ETH<input type='hidden' id='asset' value='ETH'>");  
-    console.log($("#asset").val());
+    $(".assetText").html("<img src='images/eth.png' width='20'>ETH<input type='hidden' class='asset' value='ETH'>");  
+    console.log($(".asset").val());
 })
 
 $("#usdt").click(function(){
-    $("#assetText").html("<img src='images/usdt.png' width='20'>USDT<input type='hidden' id='asset' value='USDT'>");  
-    console.log($("#asset").val());
+    $(".assetText").html("<img src='images/usdt.png' width='20'>USDT<input type='hidden' class='asset' value='USDT'>");  
+    console.log($(".asset").val());
 })
 
 $("#mkr").click(function(){
-    $("#assetText").html("<img src='images/mkr.png' width='20'>MKR<input type='hidden' id='asset' value='MKR'>");  
-    console.log($("#asset").val());
+    $(".assetText").html("<img src='images/mkr.png' width='20'>MKR<input type='hidden' class='asset' value='MKR'>");  
+    console.log($(".asset").val());
 })
 
 $("#bch").click(function(){
-    $("#assetText").html("<img src='images/bch.png' width='20'>BCH<input type='hidden' id='asset' value='BCH'>");  
-    console.log($("#asset").val());
+    $(".assetText").html("<img src='images/bch.png' width='20'>BCH<input type='hidden' class='asset' value='BCH'>");  
+    console.log($(".asset").val());
 })
 
 $("#xrp").click(function(){
-    $("#assetText").html("<img src='images/xrp.png' width='20'>XRP<input type='hidden' id='asset' value='XRP'>");  
-    console.log($("#asset").val());
+    $(".assetText").html("<img src='images/xrp.png' width='20'>XRP<input type='hidden' class='asset' value='XRP'>");  
+    console.log($(".asset").val());
 })
 
 $("#hajj_btn").click(function(){
@@ -120,7 +120,7 @@ $("#zk_btn").click(function(){
    }, 1000);
 
     var amt = $("#amount").val();
-    var asset = $("#asset").val();
+    var asset = $(".asset").val();
     console.log(amt);
     console.log(asset);
     $.ajax({
