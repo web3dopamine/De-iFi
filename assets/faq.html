@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html class="no-js" lang="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="colorlib.com">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>De-iFi</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" type="text/css" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  
+    
+    <!-- Main css -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    
+    <!-- Font Awesome -->    
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>  
+</head>
+<body class="parallax">
+    <div class="topnav" id="myTopnav">
+
+      <a href="#">Blog</a>
+      <a href="#">De-iFi</a>
+      <a href="#" style="background-image: -webkit-linear-gradient(0deg, #884d80 0%, #9795f0 0%, #2b5876 0%, #4e4376 100%)">FAQs</a>
+      <a href="/#about"><span>About</span></a>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+      <a href="/" class="" style="float: left;"><img src="images/deifi_2.png" width="90"></a>
+    </div>
+    <div class="main">
+        <div class="container" style="margin-bottom: 30px">
+
+          <button class="accordion">Is Bitcoin even a currency?</button>
+          <div class="panel">
+            <p class="p-20-0">Yes, Bitcoin is a currency. A currency have 4 functions:<br>
+            - Store of Value<br>
+            - Unit of Accounts<br>
+            - Medium of Exchange<br>
+            And bitcoin fullfill all the four functions of currency.
+          </p>
+          </div>
+
+          <button class="accordion">What is DeFi?</button>
+          <div class="panel">
+            <p class="p-20-0">DeFi is Decentralized Finance. Where we can do all finance activities without a traditional bank using cryptocurrencies. It might invovle few corporations sometime.</p>
+          </div>
+
+          <button class="accordion">So, What is DeiFi then?</button>
+          <div class="panel">
+            <p class="p-20-0">Many DeFi applicaitons have elements that does not fit in Islamic Finance, so with DeiFi we like to create a guide for individuals who are looking for green and ethical DeFi. In future, we also like to create potential DeFi applicaitons that can explicitly support Islamic Finance.</p>
+          </div>
+
+          <button class="accordion">What is the need of DeiFi?</button>
+          <div class="panel">
+            <p class="p-20-0">Islamic Finance is prevailent only in few regions suchs as South East Asia and the Middle East <br>
+              Hence Islamic Finance have poor connectivity and also highly censored. There are many people who cannot open an account in an Islamic Bank because of identity reasons.<br>
+              There are Muslims and non-muslims who would like to invest in green and ethical markets. So DeiFi is to help solve the problem of connectivity and censorship for Islamic Finance<br>
+            </p>
+          </div>
+        </div>
+    </div>      
+
+      
+
+   
+     <div class="soc-icons">
+            <i class="fa fa-facebook-square fa-3x p20" aria-hidden="true"></i>
+            <i class="fa fa-twitter fa-3x p20" aria-hidden="true"></i>
+            <i class="fa fa-reddit fa-3x p20" aria-hidden="true"></i>
+            <i class="fa fa-telegram fa-3x p20" aria-hidden="true"></i>
+            <i class="fab fa-discord p20" style='font-size:38px' aria-hidden="true"></i>
+          </div>   
+
+
+    <!-- JS -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <script src="vendor/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="vendor/jquery-validation/dist/additional-methods.min.js"></script>
+    <script src="vendor/jquery-steps/jquery.steps.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/click.js"></script>
+
+    <script type="text/javascript">
+      var acc = document.getElementsByClassName("accordion");
+      var i;
+
+      for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function() {
+          this.classList.toggle("active");
+          var panel = this.nextElementSibling;
+          if (panel.style.maxHeight) {
+            panel.style.maxHeight = null;
+          } else {
+            panel.style.maxHeight = panel.scrollHeight + "px";
+          } 
+        });
+      }
+    </script>
+
+</body>
+</html>

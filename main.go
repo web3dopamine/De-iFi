@@ -32,6 +32,8 @@ import (
 		
 
 		http.HandleFunc("/", index)
+		http.HandleFunc("/faqs", faqs)
+
 		http.HandleFunc("/zakaat", zakaat)
 		http.HandleFunc("/hajj", hajj)
 		http.HandleFunc("/qurbani", qurbani)
@@ -326,4 +328,11 @@ import (
     	mapB, _ := json.Marshal(mapD)
     	fmt.Println(string(mapB))
 		fmt.Fprint(w, string(mapB))
+	}
+
+	func faqs(w http.ResponseWriter, r *http.Request) {
+		
+		// w.Header().Set("Content-Type", "text/html")
+		tpl.ExecuteTemplate(w, "faq.html", nil)
+         
 	}
