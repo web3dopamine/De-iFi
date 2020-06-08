@@ -3,6 +3,7 @@
     $("#zakaat_in_btc").hide();
     $(".rest").hide();
     $(".zkcss").hide();
+    $(".ftcss").hide();
     $("#zk_note").hide();
 
     var form = $("#signup-form");
@@ -43,38 +44,81 @@ var typed3 = new Typed('#typed', {
         x.className = "topnav";
       }
     }
-$("#btc").click(function(){
-    $(".assetText").html("<img src='images/btc.png' width='20'>BTC<input type='hidden' class='asset' value='BTC'>");  
-    console.log($(".asset").val());
-})
-$("#eth").click(function(){
-    $(".assetText").html("<img src='images/eth.png' width='20'>ETH<input type='hidden' class='asset' value='ETH'>");  
-    console.log($(".asset").val());
-})
+//ajax call for Fitra
+$("#fitra_btn").click(function(){
+    // var amt = $("#fitra_amount").val();
+    var asset = $("#asset_fitra").val();
 
-$("#usdt").click(function(){
-    $(".assetText").html("<img src='images/usdt.png' width='20'>USDT<input type='hidden' class='asset' value='USDT'>");  
-    console.log($(".asset").val());
-})
+    console.log(asset);
 
-$("#mkr").click(function(){
-    $(".assetText").html("<img src='images/mkr.png' width='20'>MKR<input type='hidden' class='asset' value='MKR'>");  
-    console.log($(".asset").val());
-})
+    $.ajax({
+        type: 'POST',
+        url: "/fitra",
+        data: {asset: asset},
+    }).done(function(result){
+        console.log(result);
 
-$("#bch").click(function(){
-    $(".assetText").html("<img src='images/bch.png' width='20'>BCH<input type='hidden' class='asset' value='BCH'>");  
-    console.log($(".asset").val());
-})
+         // var btc = Math.round(result * 100) / 100;
+            var obj = JSON.parse(result);
+            
+            var total = Math.round(obj.fitra_in_crypto * 100000000) / 100000000;
+            
+            var fitraNote = "<i>Note: Minimum amount of Fitra is calculated on per 1.75 kg of wheat per individual</i>"
+            console.log(total);
+            if (total <= 0){
+                $(".content").css("height", "365px");
+                $("#fitra_result").html(total);
+                $("#fitra_note").html(fitraNote);
+            } else {
+                // $("#welcome_msg").hide();
+                $(".content").css("height", "365px");
+                $(".ftcss").show();
+                $("#fitra_result").html(total+" "+asset);
+                $("#fitra_note").html(fitraNote);
 
-$("#xrp").click(function(){
-    $(".assetText").html("<img src='images/xrp.png' width='20'>XRP<input type='hidden' class='asset' value='XRP'>");  
-    console.log($(".asset").val());
+            }
+    })
 })
+//ajax call for qurbani
+$("#qur_btn").click(function(){
+    var amt = $("#amount_qurbani").val();
+    var asset = $("#asset_qurbani").val();
 
+    console.log(asset);
+
+    $.ajax({
+        type: 'POST',
+        url: "/qurbani",
+        data: {amt: amt, asset: asset},
+    }).done(function(result){
+        console.log(result);
+
+         // var btc = Math.round(result * 100) / 100;
+            var obj = JSON.parse(result);
+            
+            var total = Math.round(obj.qurbani_in_USD* 100) / 100;
+            
+            var qurbaniNote = "<i>Note: Qurbani is calculated, if an individual have $500 USD or more in savings and no loans.</i>"
+            console.log(total);
+            if (total <= 0){
+                $(".content").css("height", "365px");
+                $("#qurbani_result").html("Qurbani is NOT compulsory");
+                $("#qurbani_note").html(qurbaniNote);
+            } else {
+                // $("#welcome_msg").hide();
+                $(".content").css("height", "365px");
+                // $(".zkcss").show();
+                
+                $("#qurbani_result").html("Qurbani is compulsory");
+                $("#qurbani_note").html(qurbaniNote);
+
+            }
+    })
+})
+//ajax call for hajj
 $("#hajj_btn").click(function(){
     var amt = $("#hajj_amount").val();
-    var asset = $("#hajj_asset").val();
+    var asset = $("#asset_hajj").val();
 
     console.log(asset);
 
@@ -120,7 +164,7 @@ $("#zk_btn").click(function(){
    }, 1000);
 
     var amt = $("#amount").val();
-    var asset = $(".asset").val();
+    var asset = $("#asset_zk").val();
     console.log(amt);
     console.log(asset);
     $.ajax({

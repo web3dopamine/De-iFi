@@ -46,9 +46,9 @@
                     <!-- <form method="POST"> -->
                         <div class="form-inline col-lg-12 mb40">
                             <div class="btn-group col-lg-3">
-                                <button type="button" class="btn btn-default dropdown-toggle h60" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="assetText">
+                                <button type="button" class="btn btn-default dropdown-toggle h60" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span id="assetText_zk">
                                   <img src="images/btc.png" width="20">
-                                  BTC</span><input type='hidden' class='asset' value='BTC'>
+                                  BTC<input type='hidden' id='asset_zk' value='BTC'></span>
                                   <span class="glyphicon glyphicon-chevron-down"></span>
                                 </button>
                                 
@@ -93,11 +93,11 @@
                 </h3>
                 <fieldset>
                     <h2>Calculate your Hajj</h2>
-                     <div class="form-inline">
+                     <div class="form-inline col-lg-12 mb40">
                            <div class="btn-group col-lg-3">
-                                <button type="button" class="btn btn-default dropdown-toggle h60" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="assetText">
+                                <button type="button" class="btn btn-default dropdown-toggle h60" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span id="assetText_hajj">
                                   <img src="images/btc.png" width="20">
-                                  BTC</span><input type='hidden' class='asset' value='BTC'>
+                                  BTC</span><input type='hidden' id='asset_hajj' value='BTC'>
                                   <span class="glyphicon glyphicon-chevron-down"></span>
                                 </button>
                                 
@@ -124,9 +124,10 @@
                                   </li>
                                 </ul>
                               </div>
-                        <button type="button" class="btnSb" id="hajj_btn">Submit</button>
-                        <input type="text" name="amount" id="hajj_amount" 
+                        <input type="text" name="amount" class="col-lg-6" id="hajj_amount" 
                         placeholder="Enter amount"/>
+                        <button type="button" class="btnSb col-lg-2" id="hajj_btn">Submit</button>
+                        
                     </div>
                     <p class="output" id="hajj_result"></p>
                     <p id="hajj_note"></p>
@@ -137,30 +138,88 @@
                 </h3>
                 <fieldset> 
                     <h2>Calculate your Qurbani</h2>
-                     <div class="form-inline">
-                        <select class="form-control dropdown" id="qur_asset">
-                            <option value="BTC">BTC</option>
-                            <option value="ETH">ETH</option>        
-                        </select>
-                        <button type="button" class="btnSb" id="qur_btn">Submit</button>
-                        <input type="text" name="amount" id="amount" 
+                      <div class="form-inline col-lg-12 mb40">
+                           <div class="btn-group col-lg-3">
+                                <button type="button" class="btn btn-default dropdown-toggle h60" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span id="assetText_qurbani">
+                                  <img src="images/btc.png" width="20">
+                                  BTC</span><input type='hidden' id='asset_qurbani' value='BTC'>
+                                  <span class="glyphicon glyphicon-chevron-down"></span>
+                                </button>
+                                
+                                <ul class="dropdown-menu">
+                                  <!-- <li class="dropdown-header">Member name (you)</li> -->
+                                  <li id="btc_qurbani">
+                                    <a href="#" title="Select this card"><img src="images/btc.png" width="20">BTC</a>
+                                  </li>
+                                  <li id="eth_qurbani">
+                                    <a href="#" title="Select this card"><img src="images/eth.png" width="20">ETH</a>
+                                  </li>
+                                  <li id="usdt_qurbani">
+                                    <a href="#" id="eth" title="Select this card"><img src="images/usdt.png" width="20">USDT</a>
+                                  </li>
+                                 <!--  <li class="dropdown-header">Member name</li> -->
+                                  <li id="mkr_qurbani">
+                                    <a href="#" title="Select this card"><img src="images/mkr.png" width="20">MKR</a>
+                                  </li>
+                                  <li id="bch_qurbani">
+                                    <a href="#" title="Select this card"><img src="images/bch.png" width="20">BCH</a>
+                                  </li>
+                                  <li id="xrp_qurbani">
+                                    <a href="#" title="Select this card"><img src="images/xrp.png" width="20">XRP</a>
+                                  </li>
+                                </ul>
+                              </div>
+                        <input type="text" name="amount" id="amount_qurbani" class="col-lg-6" 
                         placeholder="Enter Amount"/>
-                    </div>
+                        <button type="button" class="btnSb col-lg-2" id="qur_btn">Submit</button>
+                    </div>    
+                        <p class="output" id="qurbani_result"></p>
+                        <p id="qurbani_note" class="text-center"></p>
+                    
                 </fieldset>
                 <h3>
                     Fitra
                 </h3>
                 <fieldset> 
                     <h2>Calculate your Fitra</h2>
-                     <div class="form-inline">
-                        <select class="form-control dropdown" id="fitra_asset">
-                            <option value="BTC">BTC</option>
-                            <option value="ETH">ETH</option>        
-                        </select>
-                        <button type="button" class="btnSb" id="fitra_btn">Submit</button>
-                        <input type="text" name="amount" id="fitra_amount" 
-                        placeholder="Enter Amount"/>
+                     <div class="form-inline col-lg-12 mb40">
+                           <div class="btn-group col-lg-6">
+                                <button type="button" style="width: 100%" class="btn btn-default dropdown-toggle h60" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span id="assetText_fitra">
+                                  <img src="images/btc.png" width="20">
+                                  BTC</span><input type='hidden' id='asset_fitra' value='BTC'>
+                                  <span class="glyphicon glyphicon-chevron-down"></span>
+                                </button>
+                                
+                                <ul class="dropdown-menu" style="min-width:92%">
+                                  <!-- <li class="dropdown-header">Member name (you)</li> -->
+                                  <li id="btc_fitra">
+                                    <a href="#" title="Select this card"><img src="images/btc.png" width="20">BTC</a>
+                                  </li>
+                                  <li id="eth_fitra">
+                                    <a href="#" title="Select this card"><img src="images/eth.png" width="20">ETH</a>
+                                  </li>
+                                  <li id="usdt_fitra">
+                                    <a href="#" id="eth" title="Select this card"><img src="images/usdt.png" width="20">USDT</a>
+                                  </li>
+                                 <!--  <li class="dropdown-header">Member name</li> -->
+                                  <li id="mkr_fitra">
+                                    <a href="#" title="Select this card"><img src="images/mkr.png" width="20">MKR</a>
+                                  </li>
+                                  <li id="bch_fitra">
+                                    <a href="#" title="Select this card"><img src="images/bch.png" width="20">BCH</a>
+                                  </li>
+                                  <li id="xrp_fitra">
+                                    <a href="#" title="Select this card"><img src="images/xrp.png" width="20">XRP</a>
+                                  </li>
+                                </ul>
+                              </div>
+                        
+                        <button type="button" class="btnSb col-lg-6" id="fitra_btn" style="width: 45%">Submit</button>
                     </div>
+                        <p class='ftcss'>Your total Fitra will per individual:</p>
+                        <p class="output" id="fitra_result"></p>
+                        <p id="fitra_note" class="text-center"></p>
+                    
                 </fieldset>
             </form>
             <section id="section02" class="demo">
@@ -219,6 +278,7 @@
     <script src="vendor/jquery-validation/dist/additional-methods.min.js"></script>
     <script src="vendor/jquery-steps/jquery.steps.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/click.js"></script>
 
 
 </body>

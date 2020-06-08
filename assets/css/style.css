@@ -22,7 +22,10 @@ html {
 #hajj_result {
   margin-top: 50px;
 }
-.zkcss {
+#qurbani_result {
+  margin-top: 50px;
+}
+.zkcss, .ftcss {
   font-size: 15px!important;
   color:grey;
   margin-bottom: 0px;

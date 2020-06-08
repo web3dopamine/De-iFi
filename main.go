@@ -34,6 +34,8 @@ import (
 		http.HandleFunc("/", index)
 		http.HandleFunc("/zakaat", zakaat)
 		http.HandleFunc("/hajj", hajj)
+		http.HandleFunc("/qurbani", qurbani)
+		http.HandleFunc("/fitra", fitra)
 
 		http.HandleFunc("/css/", serveResource)
     	http.HandleFunc("/vendor/", serveResource)
@@ -78,6 +80,102 @@ import (
 		// w.Header().Set("Content-Type", "text/html")
 		tpl.ExecuteTemplate(w, "index.html", nil)
          
+	}
+
+	func fitra(w http.ResponseWriter, r *http.Request){
+		if r.Method != "POST" {
+			http.Redirect(w, r, "/", http.StatusSeeOther)
+		return
+		} 
+
+		var (
+			
+			asset string
+		)
+
+		// amt = r.FormValue("amt")
+		asset = r.FormValue("asset")
+		
+		// fmt.Println("amount = "+amt)
+		fmt.Println("asset = "+asset)
+
+		fmt.Println(price(asset))
+
+		// balance, err := strconv.ParseFloat(amt, 64)
+		asset_price := price(asset)
+
+		
+
+		final := asset_price
+
+
+		//final balance in USD
+		fmt.Println("final balance in USD")
+		fmt.Println(final)
+		
+		// USD
+		fitra_in_crypto := 2/final 
+		fmt.Println("Fitra in crypto")
+		fmt.Println(fitra_in_crypto)
+		type detials struct {
+			Asset string `json:"asset"`
+			Fitra_in_crypto float64 `json:"fitra_in_crypto"`
+		}
+		mapD := &detials {
+			Asset:asset, 
+			Fitra_in_crypto: fitra_in_crypto, 
+		}
+    	mapB, _ := json.Marshal(mapD)
+    	fmt.Println(string(mapB))
+		fmt.Fprint(w, string(mapB))
+	}
+
+	func qurbani(w http.ResponseWriter, r *http.Request){
+		if r.Method != "POST" {
+			http.Redirect(w, r, "/", http.StatusSeeOther)
+		return
+		} 
+
+		var (
+			amt string
+			asset string
+		)
+
+		amt = r.FormValue("amt")
+		asset = r.FormValue("asset")
+		
+		fmt.Println("amount = "+amt)
+		fmt.Println("asset = "+asset)
+
+		fmt.Println(price(asset))
+
+		balance, err := strconv.ParseFloat(amt, 64)
+		asset_price := price(asset)
+
+		if err != nil {
+			log.Fatal(err)
+		}
+
+		final := balance * asset_price
+
+		final = math.Round(final*10)/10
+
+		//final balance in USD
+		fmt.Println("final balance in USD")
+		fmt.Println(final)
+		
+		// USD
+		usd := final //USD value of crypto
+
+		var nisaab_in_USD float64 = 500
+
+		qurbani_in_USD := usd - nisaab_in_USD
+
+
+		mapD := map[string]float64{"qurbani_in_USD": qurbani_in_USD}
+    	mapB, _ := json.Marshal(mapD)
+    	fmt.Println(string(mapB))
+		fmt.Fprint(w, string(mapB))
 	}
 
 	func hajj(w http.ResponseWriter, r *http.Request){
