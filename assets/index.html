@@ -21,7 +21,9 @@
 
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>  
 </head>
-<body class="parallax">
+<body  onload="myFunction()" class="parallax">
+  <div id="loader"></div>
+  <div style="display:none;" id="myDiv" class="animate-bottom">
     <div class="topnav" id="myTopnav">
 
       <a href="#about">Blog</a>
@@ -267,7 +269,7 @@
             <i class="fa fa-twitter fa-3x f2" aria-hidden="true"></i>
             <i class="fa fa-youtube fa-3x f3" aria-hidden="true"></i>
           </div>   
-
+</div>
 
     <!-- JS -->
     <script src="vendor/jquery/jquery.min.js"></script>
@@ -279,7 +281,18 @@
     <script src="vendor/jquery-steps/jquery.steps.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/click.js"></script>
+ <script>
+var myVar;
 
+function myFunction() {
+  myVar = setTimeout(showPage, 900);
+}
+
+function showPage() {
+  document.getElementById("loader").style.display = "none";
+  document.getElementById("myDiv").style.display = "block";
+}
+</script>
 
 </body>
 </html>
