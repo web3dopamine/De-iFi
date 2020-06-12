@@ -33,6 +33,8 @@ import (
 
 		http.HandleFunc("/", index)
 		http.HandleFunc("/faqs", faqs)
+		http.HandleFunc("/blog", blog)
+		http.HandleFunc("/deifi", deifi)
 
 		http.HandleFunc("/zakaat", zakaat)
 		http.HandleFunc("/hajj", hajj)
@@ -81,6 +83,20 @@ import (
 		
 		// w.Header().Set("Content-Type", "text/html")
 		tpl.ExecuteTemplate(w, "index.html", nil)
+         
+	}
+
+	func blog(w http.ResponseWriter, r *http.Request) {
+		
+		// w.Header().Set("Content-Type", "text/html")
+		tpl.ExecuteTemplate(w, "blog.html", nil)
+         
+	}
+
+	func deifi(w http.ResponseWriter, r *http.Request) {
+		
+		// w.Header().Set("Content-Type", "text/html")
+		tpl.ExecuteTemplate(w, "deifi.html", nil)
          
 	}
 

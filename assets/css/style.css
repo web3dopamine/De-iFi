@@ -2,6 +2,11 @@
 html {
   scroll-behavior: smooth;
 }
+.card {
+  width: 30rem!important;
+  
+  height: 250px!important;
+}
 /*accordion css*/
 .p-20-0 {
   padding: 20px 0px;
