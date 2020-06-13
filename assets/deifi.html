@@ -9,7 +9,7 @@
     <!-- Font Icon -->
     <link rel="stylesheet" type="text/css" href="fonts/material-icon/css/material-design-iconic-font.min.css">
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
-    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+  <!--   <script src='https://kit.fontawesome.com/a076d05399.js'></script> -->
 
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -22,33 +22,37 @@
     <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>  
-    <!-- <link rel="stylesheet" type="text/css" href="css/mdb.css"> -->
+    <link rel="stylesheet" type="text/css" href="css/mdb.css">
     <style type="text/css">
         h1{
-  padding-top:20%;
+  /*padding-top:20%;*/
   color:grey;
 }
-
+body {
+    overflow-x: hidden;
+}
 .card {
   text-align:center;
-   margin-right: 40%;
-  margin-left: 40%;
-  width: 350px;
-  height: 400px;
+  margin-right: 40%;
+  margin-left: 10%;
+  width: 350px!important;
+  height: 400px!important;
   background: white;
- box-shadow: 0px 0px 0px grey;
-  -webkit-transition:  box-shadow .6s ease-out;
-     box-shadow: .8px .9px 3px grey;
+  box-shadow: 0px 0px 0px black;
+  -webkit-transition:  box-shadow .4s ease-out;
+     box-shadow: .8px .9px 3px black;
 
 }
 .card:hover{ 
-     box-shadow: 1px 8px 20px grey!important;
-    -webkit-transition:  box-shadow .6s ease-in!important;
+    
+     box-shadow: 2px 25px 35px black;
+    -webkit-transition:  box-shadow .4s ease-in;
   }
+.card > a {
+    cursor: pointer;
+}  
  
-body {
-  background-color: #F0EFEE;
-}
+
     </style>
 </head>
 <body class="parallax">
@@ -64,33 +68,34 @@ body {
       <a href="/" class="" style="float: left;"><img src="images/deifi_2.png" width="90"></a>
     </div>
     <div class="main">
-        <div class="text-center row" style="margin-bottom: 30px">
-            <div class="col-lg-4 col-sm-4 col-xs-12">
+        <div class="row" style="margin-bottom: 100px">
+            <div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
                 <div class="card">
+                    <a href="https://lightning.engineering/" target="_blank"><img src="images/lnd.png" width="300" height="160"></a>
                     <h1>Hover me</h1> 
                 </div>
             </div>
-        
-            <div class="col-lg-4 col-sm-4 col-xs-12">
-            <div class="card" style="width: 18rem;">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="card-link">Card link</a>
-                <a href="#" class="card-link">Another link</a>
-              </div>
+            <div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
+                <div class="card">
+                    <a href="https://uniswap.org/" target="_blank"><img src="images/uniswap.png" width="300" style="padding:10px 30px"></a>
+                    <h1>Hover me</h1> 
+                </div>
             </div>
+            <div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
+                <div class="card">
+                    <a href="https://www.synthetix.io/" target="_blank"><img src="images/synt.png" width="300"></a>
+                    <h1>Hover me</h1> 
+                </div>
+            </div>
+            
         </div>
-        <div class="col-lg-4 col-sm-4 col-xs-12">
-            <div class="card" style="width: 18rem;">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="card-link">Card link</a>
-                <a href="#" class="card-link">Another link</a>
-              </div>
+
+        <div class="row">
+            <div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
+                <div class="card">
+                    <a href="https://aave.com/" target="_blank"><img src="images/aave.jpeg" width="300" style="padding: 30px"></a>
+                    <h1>Hover me</h1> 
+                </div>
             </div>
         </div>
     </div>
